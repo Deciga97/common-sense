@@ -48,6 +48,7 @@ public class User {
     // Getters and Setters //
 
     private int Id;
+    private String Email;
 
 
 }
