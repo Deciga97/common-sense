@@ -45,5 +45,9 @@ public class User {
     private LocalDateTime updatedAt;
 
 
+    // Getters and Setters //
+
+    private int Id;
+
 
 }
