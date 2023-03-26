@@ -61,8 +61,29 @@ public class Politician {
     @UpdateTimestamp
     private LocalDateTime updatedAt;
 
+    // Constructors //
 
-    // Getters and Setters //
+    public Politician() {}
+
+    public Politician(Long id, String firstName, String middleName, String lastName, String partyAffiliation, String district, String position, String photo_Url, String email, String phoneNumber, String officeAddress, String biography, String votingRecords, LocalDateTime createdAt, LocalDateTime updatedAt) {
+        this.id = id;
+        this.firstName = firstName;
+        this.middleName = middleName;
+        this.lastName = lastName;
+        this.partyAffiliation = partyAffiliation;
+        this.district = district;
+        this.position = position;
+        this.photo_Url = photo_Url;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.officeAddress = officeAddress;
+        Biography = biography;
+        this.votingRecords = votingRecords;
+        CreatedAt = createdAt;
+        this.updatedAt = updatedAt;
+    }
+
+// Getters and Setters //
 
     public Long getId() {
         return id;

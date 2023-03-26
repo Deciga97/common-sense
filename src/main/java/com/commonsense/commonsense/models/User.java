@@ -49,6 +49,18 @@ public class User {
 
     // Getters and Setters //
 
+    // Constructors //
+    public User() {}
+
+    public User(String email, String password, String firstName, String lastName, String partyAffiliation) {
+        this.email = email;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.partyAffiliation = partyAffiliation;
+    }
+
+
     public Long getId() {
         return id;
     }
