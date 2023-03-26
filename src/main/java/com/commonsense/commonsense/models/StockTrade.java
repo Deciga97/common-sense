@@ -47,4 +47,88 @@ public class StockTrade {
     @Column(name = "updated_at", nullable = false)
     @UpdateTimestamp
     private LocalDateTime updatedAt;
+
+    // Constructors //
+
+    public StockTrade() {}
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Politician getPolitician() {
+        return politician;
+    }
+
+    public void setPolitician(Politician politician) {
+        this.politician = politician;
+    }
+
+    public String getStockSymbol() {
+        return stockSymbol;
+    }
+
+    public void setStockSymbol(String stockSymbol) {
+        this.stockSymbol = stockSymbol;
+    }
+
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
+
+    public LocalDate getTradeDate() {
+        return tradeDate;
+    }
+
+    public void setTradeDate(LocalDate tradeDate) {
+        this.tradeDate = tradeDate;
+    }
+
+    public String getTradeType() {
+        return tradeType;
+    }
+
+    public void setTradeType(String tradeType) {
+        this.tradeType = tradeType;
+    }
+
+    public BigDecimal getTradeAmount() {
+        return tradeAmount;
+    }
+
+    public void setTradeAmount(BigDecimal tradeAmount) {
+        this.tradeAmount = tradeAmount;
+    }
+
+    public BigDecimal getTradePrice() {
+        return tradePrice;
+    }
+
+    public void setTradePrice(BigDecimal tradePrice) {
+        this.tradePrice = tradePrice;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+    }
 }
