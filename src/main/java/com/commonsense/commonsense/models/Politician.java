@@ -7,6 +7,7 @@ import org.hibernate.validator.constraints.br.CPF;
 
 import java.time.LocalDateTime;
 
+// ORM Databased Created //
 
 @Entity
 @Table(name = "politicians")
@@ -60,4 +61,126 @@ public class Politician {
     @UpdateTimestamp
     private LocalDateTime updatedAt;
 
+
+    // Getters and Setters //
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getMiddleName() {
+        return middleName;
+    }
+
+    public void setMiddleName(String middleName) {
+        this.middleName = middleName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getPartyAffiliation() {
+        return partyAffiliation;
+    }
+
+    public void setPartyAffiliation(String partyAffiliation) {
+        this.partyAffiliation = partyAffiliation;
+    }
+
+    public String getDistrict() {
+        return district;
+    }
+
+    public void setDistrict(String district) {
+        this.district = district;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
+    public String getPhoto_Url() {
+        return photo_Url;
+    }
+
+    public void setPhoto_Url(String photo_Url) {
+        this.photo_Url = photo_Url;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getOfficeAddress() {
+        return officeAddress;
+    }
+
+    public void setOfficeAddress(String officeAddress) {
+        this.officeAddress = officeAddress;
+    }
+
+    public String getBiography() {
+        return Biography;
+    }
+
+    public void setBiography(String biography) {
+        Biography = biography;
+    }
+
+    public String getVotingRecords() {
+        return votingRecords;
+    }
+
+    public void setVotingRecords(String votingRecords) {
+        this.votingRecords = votingRecords;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return CreatedAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        CreatedAt = createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+    }
 }
