@@ -7,7 +7,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 import java.time.LocalDateTime;
 
 
-// ORM Databased Created //
+// ORM Database Created //
 @Entity
 @Table(name = "Bills")
 public class Bill {

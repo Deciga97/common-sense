@@ -47,8 +47,6 @@ public class User {
     @UpdateTimestamp
     private LocalDateTime updatedAt;
 
-    // Getters and Setters //
-
     // Constructors //
     public User() {}
 
@@ -60,6 +58,8 @@ public class User {
         this.partyAffiliation = partyAffiliation;
     }
 
+
+    // Getters and Setters //
 
     public Long getId() {
         return id;

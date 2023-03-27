@@ -3,11 +3,13 @@ package com.commonsense.commonsense.models;
 
 import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.UpdateTimestamp;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+
+
+// ORM Database Created //
 
 @Entity
 @Table(name = "stock_trades")
@@ -50,6 +52,21 @@ public class StockTrade {
     // Constructors //
 
     public StockTrade() {}
+
+    public StockTrade(Long id, Politician politician, String stockSymbol, String companyName, LocalDate tradeDate, String tradeType, BigDecimal tradeAmount, BigDecimal tradePrice, LocalDateTime createdAt, LocalDateTime updatedAt) {
+        this.id = id;
+        this.politician = politician;
+        this.stockSymbol = stockSymbol;
+        this.companyName = companyName;
+        this.tradeDate = tradeDate;
+        this.tradeType = tradeType;
+        this.tradeAmount = tradeAmount;
+        this.tradePrice = tradePrice;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+    }
+
+    // Getters and Setters //
 
     public Long getId() {
         return id;
