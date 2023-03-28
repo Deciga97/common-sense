@@ -33,4 +33,17 @@ public class UserVotingRecord {
 
     @Column(name = "updated_at", nullable = false)
     private LocalDateTime updatedAt;
+
+    // Constructors //
+
+    public UserVotingRecord() {}
+
+    public UserVotingRecord(Long id, User user, Poll poll, PollOption option, LocalDateTime createdAt, LocalDateTime updatedAt) {
+        this.id = id;
+        this.user = user;
+        this.poll = poll;
+        this.option = option;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+    }
 }
