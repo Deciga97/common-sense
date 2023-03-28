@@ -58,9 +58,25 @@ public class Donation {
     @UpdateTimestamp
     private LocalDateTime updatedAt;
 
+    // Constructors //
+    public Donation() {}
 
-
-
+    public Donation(Long id, Politician politician, String donorName, BigDecimal amount, LocalDate donationDate, String donationType, String occupation, String employer, String address, String city, String state, String zipCode, LocalDateTime createdAt, LocalDateTime updatedAt) {
+        this.id = id;
+        this.politician = politician;
+        this.donorName = donorName;
+        this.amount = amount;
+        this.donationDate = donationDate;
+        this.donationType = donationType;
+        this.occupation = occupation;
+        this.employer = employer;
+        this.address = address;
+        this.city = city;
+        this.state = state;
+        this.zipCode = zipCode;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+    }
 
 
 
