@@ -28,5 +28,15 @@ public class UserComment {
     @Column(name = "created_at", nullable = false)
     private LocalDateTime updatedAt;
 
+    // Constructor //
 
+    public UserComment() {}
+
+    public UserComment(Long id, User user, Bill bill, String text, LocalDateTime updatedAt) {
+        this.id = id;
+        this.user = user;
+        this.bill = bill;
+        this.text = text;
+        this.updatedAt = updatedAt;
+    }
 }
