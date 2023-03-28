@@ -45,4 +45,20 @@ public class Lobbyist {
     @UpdateTimestamp
     private LocalDateTime updatedAt;
 
+    // Constructors //
+
+    public Lobbyist() {}
+
+    public Lobbyist(Long id, String firstName, String middleName, String lastName, String organization, String email, String phoneNumber, String officeAddress, LocalDateTime createdAt, LocalDateTime updatedAt) {
+        this.id = id;
+        this.firstName = firstName;
+        this.middleName = middleName;
+        this.lastName = lastName;
+        this.organization = organization;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.officeAddress = officeAddress;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+    }
 }
