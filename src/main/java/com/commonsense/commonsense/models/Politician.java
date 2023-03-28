@@ -3,9 +3,10 @@ package com.commonsense.commonsense.models;
 import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
-import org.hibernate.validator.constraints.br.CPF;
 
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 // ORM Databased Created //
 
@@ -16,6 +17,10 @@ public class Politician {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @ManyToMany(mappedBy = "politicians")
+    private Set<Bill> bills = new HashSet<>();
+
 
     @Column(name = "first_name", length = 25, nullable = false)
     private String firstName;

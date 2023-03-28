@@ -5,6 +5,8 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 
 // ORM Database Created //
@@ -19,9 +21,13 @@ public class Bill {
     @Column(name = "title", nullable = false)
     private String title;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "politician_id")
-    private Politician politician;
+    @ManyToMany(cascade = { CascadeType.ALL })
+    @JoinTable(
+            name = "bill_politician",
+            joinColumns = { @JoinColumn(name = "bill_id") },
+            inverseJoinColumns = { @JoinColumn(name = "politician_id") }
+    )
+    private Set<Politician> politicians = new HashSet<>();
 
     @Column(name = "summary")
     private String summary;
@@ -44,10 +50,10 @@ public class Bill {
 
     public Bill() {}
 
-    public Bill(Long id, String title, Politician politician, String summary, String description, String status, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public Bill(Long id, String title, Set<Politician> politicians, String summary, String description, String status, LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.id = id;
         this.title = title;
-        this.politician = politician;
+        this.politicians = politicians;
         this.summary = summary;
         this.description = description;
         this.status = status;
@@ -74,12 +80,12 @@ public class Bill {
         this.title = title;
     }
 
-    public Politician getPolitician() {
-        return politician;
+    public Set<Politician> getPoliticians() {
+        return politicians;
     }
 
-    public void setPolitician(Politician politician) {
-        this.politician = politician;
+    public void setPoliticians(Set<Politician> politicians) {
+        this.politicians = politicians;
     }
 
     public String getSummary() {
