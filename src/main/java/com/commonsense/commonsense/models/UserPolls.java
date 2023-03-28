@@ -33,4 +33,19 @@ public class UserPolls {
     @Column(name = "created_at", nullable = false, updatable = false)
     @CreationTimestamp
     private LocalDateTime createdAt;
+
+    // Constructors //
+    public UserPolls() {}
+
+    public UserPolls(Long id, User user, String pollType, Long pollId, String vote, LocalDateTime createdAt) {
+        this.id = id;
+        this.user = user;
+        this.pollType = pollType;
+        this.pollId = pollId;
+        this.vote = vote;
+        this.createdAt = createdAt;
+    }
+
+
+
 }
