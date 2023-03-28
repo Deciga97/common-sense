@@ -78,6 +78,118 @@ public class Donation {
         this.updatedAt = updatedAt;
     }
 
+    // Getters and Setters //
 
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Politician getPolitician() {
+        return politician;
+    }
+
+    public void setPolitician(Politician politician) {
+        this.politician = politician;
+    }
+
+    public String getDonorName() {
+        return donorName;
+    }
+
+    public void setDonorName(String donorName) {
+        this.donorName = donorName;
+    }
+
+    public BigDecimal getAmount() {
+        return amount;
+    }
+
+    public void setAmount(BigDecimal amount) {
+        this.amount = amount;
+    }
+
+    public LocalDate getDonationDate() {
+        return donationDate;
+    }
+
+    public void setDonationDate(LocalDate donationDate) {
+        this.donationDate = donationDate;
+    }
+
+    public String getDonationType() {
+        return donationType;
+    }
+
+    public void setDonationType(String donationType) {
+        this.donationType = donationType;
+    }
+
+    public String getOccupation() {
+        return occupation;
+    }
+
+    public void setOccupation(String occupation) {
+        this.occupation = occupation;
+    }
+
+    public String getEmployer() {
+        return employer;
+    }
+
+    public void setEmployer(String employer) {
+        this.employer = employer;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getZipCode() {
+        return zipCode;
+    }
+
+    public void setZipCode(String zipCode) {
+        this.zipCode = zipCode;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+    }
 }
