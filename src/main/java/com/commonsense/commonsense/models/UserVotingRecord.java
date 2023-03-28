@@ -20,13 +20,13 @@ public class UserVotingRecord {
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "poll_id", nullable = false)
-    private Poll poll;
+    @ManyToOne
+    @JoinColumn(name = "poll_id", referencedColumnName = "id")
+    private UserPolls poll;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "option_id", nullable = false)
-    private PollOption option;
+
+    @Column(name = "option_id", nullable = false)
+    private Long optionId;
 
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
@@ -38,11 +38,11 @@ public class UserVotingRecord {
 
     public UserVotingRecord() {}
 
-    public UserVotingRecord(Long id, User user, Poll poll, PollOption option, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public UserVotingRecord(Long id, User user, UserPolls poll, Long optionId, LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.id = id;
         this.user = user;
         this.poll = poll;
-        this.option = option;
+        this.optionId = optionId;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
     }
@@ -66,20 +66,20 @@ public class UserVotingRecord {
         this.user = user;
     }
 
-    public Poll getPoll() {
+    public UserPolls getPoll() {
         return poll;
     }
 
-    public void setPoll(Poll poll) {
+    public void setPoll(UserPolls poll) {
         this.poll = poll;
     }
 
-    public PollOption getOption() {
-        return option;
+    public Long getOptionId() {
+        return optionId;
     }
 
-    public void setOption(PollOption option) {
-        this.option = option;
+    public void setOptionId(Long optionId) {
+        this.optionId = optionId;
     }
 
     public LocalDateTime getCreatedAt() {
