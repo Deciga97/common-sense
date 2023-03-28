@@ -32,8 +32,6 @@ public class PoliticianVotingRecord {
 
     // Constructors //
 
-    public Politician getPolitician() {}
-
     public PoliticianVotingRecord() {
         this.createdAt = LocalDateTime.now();
         this.updatedAt = LocalDateTime.now();
@@ -47,5 +45,52 @@ public class PoliticianVotingRecord {
         this.updatedAt = LocalDateTime.now();
     }
 
+    // Getters and Setters //
+    public Long getId() {
+        return id;
+    }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Bill getBill() {
+        return bill;
+    }
+
+    public void setBill(Bill bill) {
+        this.bill = bill;
+    }
+
+    public Politician getPolitician() {
+        return politician;
+    }
+
+    public void setPolitician(Politician politician) {
+        this.politician = politician;
+    }
+
+    public String getVote() {
+        return vote;
+    }
+
+    public void setVote(String vote) {
+        this.vote = vote;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+    }
 }
