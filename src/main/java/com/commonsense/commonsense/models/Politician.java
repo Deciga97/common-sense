@@ -34,6 +34,10 @@ public class Politician {
     @OneToMany(mappedBy = "politician")
     private Set<PoliticianVotingRecord> politicianVotingRecords = new HashSet<>();
 
+    // One-to-many relationship between and stock trade table //
+    @OneToMany(mappedBy = "politician")
+    private Set<StockTrade> stockTrades = new HashSet<>();
+
     @Column(name = "first_name", length = 25, nullable = false)
     private String firstName;
 

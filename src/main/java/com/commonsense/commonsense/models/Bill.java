@@ -32,7 +32,9 @@ public class Bill {
     @OneToMany(mappedBy = "bill")
     private Set<PoliticianVotingRecord> politicianVotingRecords = new HashSet<>();
 
-    // ...
+    // One-to-many relationship between bills and User comment table //
+    @OneToMany(mappedBy = "bill")
+    private Set<UserComment> userComments = new HashSet<>();
 
 
 
