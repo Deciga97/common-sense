@@ -1,4 +1,4 @@
 package com.commonsense.commonsense.repositories;
 
-public interface Lobbyist {
+public interface LobbyistRepository {
 }
