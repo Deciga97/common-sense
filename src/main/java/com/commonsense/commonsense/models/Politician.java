@@ -18,16 +18,17 @@ public class Politician {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    // One-to-many relationship between politician and donation tables
+    @OneToMany(mappedBy = "politician")
+    private Set<Donation> donations = new HashSet<>();
 
-    // Many-to-many relationship between politician and bill tables //
+    // Many-to-many relationship between politician and bill tables
     @ManyToMany(mappedBy = "politicians")
     private Set<Bill> bills = new HashSet<>();
 
-    // Many-to-many relationship between politician and committee tables //
+    // Many-to-many relationship between politician and committee tables
     @ManyToMany(mappedBy = "politicians")
     private Set<Committee> committees = new HashSet<>();
-
-
 
     @Column(name = "first_name", length = 25, nullable = false)
     private String firstName;
@@ -72,7 +73,6 @@ public class Politician {
     @Column(name = "updated_at", nullable = false)
     @UpdateTimestamp
     private LocalDateTime updatedAt;
-
     // Constructors //
 
     public Politician() {}
