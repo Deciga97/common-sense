@@ -18,8 +18,15 @@ public class Politician {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+
+    // Many-to-many relationship between politician and bill tables //
     @ManyToMany(mappedBy = "politicians")
     private Set<Bill> bills = new HashSet<>();
+
+    // Many-to-many relationship between politician and committee tables //
+    @ManyToMany(mappedBy = "politicians")
+    private Set<Committee> committees = new HashSet<>();
+
 
 
     @Column(name = "first_name", length = 25, nullable = false)
