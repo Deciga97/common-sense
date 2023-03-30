@@ -1,4 +1,7 @@
 package com.commonsense.commonsense.repositories;
 
-public interface PoliticianVotingRecordRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface PoliticianVotingRecordRepository extends JpaRepository<PoliticianRepository, Long> {
+
 }
