@@ -24,7 +24,7 @@ public class User {
     // many-to-one relationship between the UserPolls and User tables //
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<UserPolls> userPolls = new ArrayList<>();
+    private List<UserPoll> userPolls = new ArrayList<>();
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Notification> notifications = new ArrayList<>();

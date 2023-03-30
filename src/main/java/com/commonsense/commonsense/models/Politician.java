@@ -39,7 +39,7 @@ public class Politician {
     private Set<StockTrade> stockTrades = new HashSet<>();
 
     @OneToMany(mappedBy = "politician")
-    private Set<UserPolls> userPolls = new HashSet<>();
+    private Set<UserPoll> userPolls = new HashSet<>();
 
 
     @Column(name = "first_name", length = 25, nullable = false)

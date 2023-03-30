@@ -13,7 +13,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "user_polls")
-public class UserPolls {
+public class UserPoll {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -41,9 +41,9 @@ public class UserPolls {
     private LocalDateTime createdAt;
 
     // Constructors //
-    public UserPolls() {}
+    public UserPoll() {}
 
-    public UserPolls(Long id, User user, String pollType, Long pollId, String vote, LocalDateTime createdAt) {
+    public UserPoll(Long id, User user, String pollType, Long pollId, String vote, LocalDateTime createdAt) {
         this.id = id;
         this.user = user;
         this.pollType = pollType;

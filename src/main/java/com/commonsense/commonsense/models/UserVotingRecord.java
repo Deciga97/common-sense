@@ -22,7 +22,7 @@ public class UserVotingRecord {
 
     @ManyToOne
     @JoinColumn(name = "poll_id", referencedColumnName = "id")
-    private UserPolls poll;
+    private UserPoll poll;
 
 
     @Column(name = "option_id", nullable = false)
@@ -38,7 +38,7 @@ public class UserVotingRecord {
 
     public UserVotingRecord() {}
 
-    public UserVotingRecord(Long id, User user, UserPolls poll, Long optionId, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public UserVotingRecord(Long id, User user, UserPoll poll, Long optionId, LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.id = id;
         this.user = user;
         this.poll = poll;
@@ -66,11 +66,11 @@ public class UserVotingRecord {
         this.user = user;
     }
 
-    public UserPolls getPoll() {
+    public UserPoll getPoll() {
         return poll;
     }
 
-    public void setPoll(UserPolls poll) {
+    public void setPoll(UserPoll poll) {
         this.poll = poll;
     }
 
