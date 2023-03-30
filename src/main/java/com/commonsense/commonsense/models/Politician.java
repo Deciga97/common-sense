@@ -30,6 +30,10 @@ public class Politician {
     @ManyToMany(mappedBy = "politicians")
     private Set<Committee> committees = new HashSet<>();
 
+    // One-to-many relationship between politician and politician voting record tables //
+    @OneToMany(mappedBy = "politician")
+    private Set<PoliticianVotingRecord> politicianVotingRecords = new HashSet<>();
+
     @Column(name = "first_name", length = 25, nullable = false)
     private String firstName;
 

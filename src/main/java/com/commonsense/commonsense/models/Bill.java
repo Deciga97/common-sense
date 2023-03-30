@@ -27,6 +27,13 @@ public class Bill {
     )
     private Set<Politician> politicians = new HashSet<>();
 
+    // One-to-many relationship between bills and politican voting record table //
+
+    @OneToMany(mappedBy = "bill")
+    private Set<PoliticianVotingRecord> politicianVotingRecords = new HashSet<>();
+
+    // ...
+
 
 
     @Column(name = "title", nullable = false)
