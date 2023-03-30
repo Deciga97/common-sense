@@ -18,9 +18,7 @@ public class Bill {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "title", nullable = false)
-    private String title;
-
+    // Many-to-many relationship between bill and politician table //
     @ManyToMany(cascade = { CascadeType.ALL })
     @JoinTable(
             name = "bill_politician",
@@ -28,6 +26,11 @@ public class Bill {
             inverseJoinColumns = { @JoinColumn(name = "politician_id") }
     )
     private Set<Politician> politicians = new HashSet<>();
+
+
+
+    @Column(name = "title", nullable = false)
+    private String title;
 
     @Column(name = "summary")
     private String summary;

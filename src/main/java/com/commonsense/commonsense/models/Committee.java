@@ -9,25 +9,12 @@ import java.util.HashSet;
 import java.util.Set;
 
 
-// ORM Database Created //
-
-
 @Entity
 @Table(name = "committees")
 public class Committee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    // Many-to-many relationships between committee and politician table //
-    @ManyToMany(cascade = { CascadeType.ALL })
-    @JoinTable(
-            name = "committee_politician",
-            joinColumns = { @JoinColumn(name = "committee_id") },
-            inverseJoinColumns = { @JoinColumn(name = "politician_id") }
-    )
-    private Set<Politician> politicians = new HashSet<>();
-
 
     @Column(name = "name", nullable = false)
     private String name;
@@ -41,8 +28,13 @@ public class Committee {
     @Column(name = "potential_issues")
     private String potentialIssues;
 
-    @Column(name = "bills")
-    private String bills;
+    @ManyToMany(cascade = { CascadeType.ALL })
+    @JoinTable(
+            name = "committee_bill",
+            joinColumns = { @JoinColumn(name = "committee_id") },
+            inverseJoinColumns = { @JoinColumn(name = "bill_id") }
+    )
+    private Set<Bill> bills = new HashSet<>();
 
     @Column(name = "created_at", nullable = false, updatable = false)
     @CreationTimestamp
@@ -53,15 +45,14 @@ public class Committee {
     private LocalDateTime updatedAt;
 
     // Constructors //
-     public Committee() {}
+    public Committee() {}
 
-    public Committee(Long id, String name, String description, String memberIds, String potentialIssues, String bills, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public Committee(Long id, String name, String description, String memberIds, String potentialIssues, LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.memberIds = memberIds;
         this.potentialIssues = potentialIssues;
-        this.bills = bills;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
     }
@@ -108,11 +99,11 @@ public class Committee {
         this.potentialIssues = potentialIssues;
     }
 
-    public String getBills() {
+    public Set<Bill> getBills() {
         return bills;
     }
 
-    public void setBills(String bills) {
+    public void setBills(Set<Bill> bills) {
         this.bills = bills;
     }
 
@@ -132,4 +123,3 @@ public class Committee {
         this.updatedAt = updatedAt;
     }
 }
-
