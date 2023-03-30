@@ -1,4 +1,8 @@
 package com.commonsense.commonsense.repositories;
 
-public interface DonationRepository {
+import com.commonsense.commonsense.models.Donation;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface DonationRepository extends JpaRepository<Donation, Long> {
+
 }
