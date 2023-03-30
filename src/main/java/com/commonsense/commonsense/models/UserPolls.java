@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 
 // ORM Table Created //
@@ -20,6 +22,10 @@ public class UserPolls {
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private User user;
+
+    @OneToMany(mappedBy = "poll")
+    private Set<UserVotingRecord> userVotingRecords = new HashSet<>();
+
 
     @Column(name = "poll_type", nullable = false, length = 50)
     private String pollType;
