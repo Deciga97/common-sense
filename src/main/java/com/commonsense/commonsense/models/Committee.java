@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 
 // ORM Database Created //
@@ -16,6 +18,16 @@ public class Committee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    // Many-to-many relationships between committee and politician table //
+    @ManyToMany(cascade = { CascadeType.ALL })
+    @JoinTable(
+            name = "committee_politician",
+            joinColumns = { @JoinColumn(name = "committee_id") },
+            inverseJoinColumns = { @JoinColumn(name = "politician_id") }
+    )
+    private Set<Politician> politicians = new HashSet<>();
+
 
     @Column(name = "name", nullable = false)
     private String name;
