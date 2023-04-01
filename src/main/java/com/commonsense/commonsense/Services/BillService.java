@@ -4,18 +4,16 @@ import com.commonsense.commonsense.models.Bill;
 
 import java.util.List;
 
-public interface BillService  {
+public interface BillService {
 
-    public abstract Bill createBill(Bill bill);
+    Bill createBill(Bill bill);
 
-    public abstract Bill updateBill(Long id);
+    Bill updateBill(Long id, Bill updatedBill);
 
-    public abstract Bill deleteBill(Long id);
+    void deleteBill(Long id);
 
-    public abstract Bill getBillById(Long id);
+    Bill getBillById(Long id);
 
-    public abstract List<Bill> getAllBills();
-
-
+    List<Bill> getAllBills();
 
 }
