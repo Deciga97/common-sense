@@ -1,13 +1,10 @@
 package com.commonsense.commonsense.Services;
 
 import com.commonsense.commonsense.models.Committee;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface CommitteeService {
-    List<Committee> getAllCommittees();
-    Committee getCommitteeById(Long id);
-    Committee createCommittee(Committee committee);
-    Committee updateCommittee(Long id, Committee committee);
-    void deleteCommittee(Long id);
+public interface CommitteeService extends JpaRepository<Committee, Long> {
+
 }
