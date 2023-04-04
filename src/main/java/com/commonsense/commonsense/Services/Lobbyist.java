@@ -1,12 +1,10 @@
 package com.commonsense.commonsense.Services;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+
 import java.util.List;
 
-public interface Lobbyist {
-    Lobbyist createLobbyist(Lobbyist lobbyist);
-    Lobbyist updateLobbyist(Long id, Lobbyist lobbyist);
-    void deleteLobbyist(Long id);
-    Lobbyist getLobbyistById(Long id);
-    List<Lobbyist> getAllLobbyists();
+public interface Lobbyist extends JpaRepository<Lobbyist, Long> {
+
 
 }
