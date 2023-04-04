@@ -1,4 +1,7 @@
 package com.commonsense.commonsense.Services;
 
-public interface UserCommentService {
+import com.commonsense.commonsense.models.UserComment;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface UserCommentService extends JpaRepository<UserComment, Long> {
 }
