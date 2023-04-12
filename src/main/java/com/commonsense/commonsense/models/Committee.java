@@ -28,6 +28,9 @@ public class Committee {
     @Column(name = "potential_issues")
     private String potentialIssues;
 
+    @ManyToMany(mappedBy = "committees")
+    private Set<Politician> politicians = new HashSet<>();
+
     @ManyToMany(cascade = { CascadeType.ALL })
     @JoinTable(
             name = "committee_bill",

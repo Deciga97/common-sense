@@ -27,7 +27,12 @@ public class Politician {
     private Set<Bill> bills = new HashSet<>();
 
     // Many-to-many relationship between politician and committee tables
-    @ManyToMany(mappedBy = "politicians")
+    @ManyToMany(cascade = { CascadeType.ALL })
+    @JoinTable(
+            name = "politician_committee",
+            joinColumns = { @JoinColumn(name = "politician_id") },
+            inverseJoinColumns = { @JoinColumn(name = "committee_id") }
+    )
     private Set<Committee> committees = new HashSet<>();
 
     // One-to-many relationship between politician and politician voting record tables //
